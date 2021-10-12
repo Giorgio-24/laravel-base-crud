@@ -7,13 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-@foreach($comic as $element)
-<br>
-<div>{{$element->title}}</div>
-<div>{{$element->price}}$</div>
-<div>{{$element->series}}</div>
-<div>{{$element->type}}</div>
 
-@endforeach
+<br>
+<div>{{$comic->title}}</div>
+<div>{{$comic->price}}$</div>
+<div>{{$comic->series}}</div>
+<div>{{$comic->type}}</div>
 </body>
 </html>

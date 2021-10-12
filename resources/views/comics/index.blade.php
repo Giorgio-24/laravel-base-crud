@@ -7,13 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-@foreach($comic as $element)
-<br>
-<div>{{$element->title}}</div>
-<div>{{$element->price}}$</div>
-<div>{{$element->series}}</div>
-<div>{{$element->type}}</div>
-
-@endforeach
+    @foreach($comics as $comic)
+    <div><a href=" {{route('comics.show' , $comic->id)}}">{{$comic->title}}</a></div>
+    @endforeach
 </body>
 </html>
