@@ -1,6 +1,6 @@
 @include('includes.header')
-<main>
-    Weeeee
+<main class="container">
+    @yield('content')
 </main>
 </body>
 </html>
