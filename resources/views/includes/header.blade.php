@@ -12,8 +12,8 @@
         <div class="row justify-content-around align-items-center text-white h-100">
             <h1 class="col-3">Dc Comics</h1>
             <nav class="col-6 offset-1">
-                <a href="" class="text-decoration-none text-white me-3">Home</a>
-                <a href="" class="text-decoration-none text-white">Create Comic</a>
+                <a href="/" class="text-decoration-none text-white me-3">Home</a>
+                <a href="/comics/create" class="text-decoration-none text-white">Create Comic</a>
             </nav>
         </div>
     </header>
