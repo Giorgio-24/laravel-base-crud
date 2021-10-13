@@ -8,7 +8,16 @@
       <h5 class="card-title">{{$comic->title}}</h5>
        {{-- <p class="card-text">{{$comic->description}}</p> --}}
       <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Go</a>
-      <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-danger">Edit</a>
+      <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-secondary">Edit</a>
+      <div class="d-inline-block">
+            <form method="POST" action="{{route('comics.destroy', $comic->id)}}">
+                @method('DELETE')
+                @csrf
+            <button class="btn rounded bg-danger text-white" type="submit">Delete</button>
+            </form>
+      </div>
+
+
     </div>
   </div>
 @endforeach
