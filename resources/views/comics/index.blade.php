@@ -7,7 +7,8 @@
     <div class="card-body">
       <h5 class="card-title">{{$comic->title}}</h5>
        {{-- <p class="card-text">{{$comic->description}}</p> --}}
-      <a href="comics/{{$loop->iteration}}" class="btn btn-primary">Go</a>
+      <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Go</a>
+      <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-danger">Edit</a>
     </div>
   </div>
 @endforeach
