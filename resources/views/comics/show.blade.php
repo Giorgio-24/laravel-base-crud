@@ -9,7 +9,7 @@
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title"><strong>Title: </strong>{{$comic->title}}</h5>
-          <p class="card-text"><strong>Serie:</strong> {{$comic->serie}}</p>
+          <p class="card-text"><strong>Series:</strong> {{$comic->series}}</p>
           <p class="card-text"><strong>Type:</strong> {{$comic->type}}</p>
           <p class="card-text"><strong>Sale date:</strong> {{$comic->sale_date}}</p>
           <p class="card-text"><strong>Description:</strong> {{$comic->description}}</p>
