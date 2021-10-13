@@ -50,7 +50,6 @@ class ComicController extends Controller
     {
         $comic = Comic::findOrFail($id);
         //?    $comic = config('comics')[$id];
-        dd($comic);
         return view('comics.show', compact('comic'));
     }
 
