@@ -1,6 +1,15 @@
 @extends('layouts.main')
 @section('content')
-@foreach ($comics as $comic)
-<div><a href="comics/{{$loop->index}}">{{$comic->title}}</a></div>
+<div class="row justify-content-around mt-5">
+    @foreach ($comics as $comic)
+<div class="card" style="width: 18rem;">
+    <img src="{{$comic->thumb}}" class="card-img-top" alt="{{$comic->title}}-image">
+    <div class="card-body">
+      <h5 class="card-title">{{$comic->title}}</h5>
+       {{-- <p class="card-text">{{$comic->description}}</p> --}}
+      <a href="comics/{{$loop->iteration}}" class="btn btn-primary">Go</a>
+    </div>
+  </div>
 @endforeach
+</div>
 @endsection
