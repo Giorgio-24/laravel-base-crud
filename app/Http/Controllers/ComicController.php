@@ -115,4 +115,11 @@ class ComicController extends Controller
         $comic->restore();
         return redirect()->route('comics.index');
     }
+
+    public function permanentlyDelete($id)
+    {
+        $comic = Comic::withTrashed()->find($id);
+        $comic->forceDelete();
+        return redirect()->route('comics.index');
+    }
 }
