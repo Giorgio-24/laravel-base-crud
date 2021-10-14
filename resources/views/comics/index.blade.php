@@ -2,7 +2,7 @@
 @section('content')
 <div class="row justify-content-around mt-5">
     @foreach ($comics as $comic)
-<div class="card" style="width: 18rem;">
+<div class="card pt-3" style="width: 18rem;">
     <img src="{{$comic->thumb}}" class="card-img-top" alt="{{$comic->title}}-image">
     <div class="card-body">
       <h5 class="card-title">{{$comic->title}}</h5>
@@ -16,8 +16,6 @@
             <button class="btn rounded bg-danger text-white" type="submit">Delete</button>
             </form>
       </div>
-
-
     </div>
   </div>
 @endforeach

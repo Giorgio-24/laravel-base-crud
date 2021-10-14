@@ -11243,6 +11243,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  background-color: #faf8f8;
+}
+
 .h-90 {
   height: 90px;
 }

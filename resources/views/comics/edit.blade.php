@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-<form method="POST" action="{{route('comics.update', $comic->id)}}" class="border rounded my-5 p-5">
+<form method="POST" action="{{route('comics.update', $comic->id)}}" class="border border-3 rounded my-5 p-5 bg-white">
     @method('PATCH')
     @csrf 
     
