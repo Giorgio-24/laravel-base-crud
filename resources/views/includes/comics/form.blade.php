@@ -1,4 +1,4 @@
-@if ($comic->exist)
+@if ($comic->exists)
     <form method="POST" action="{{ route('comics.update', $comic->id) }}"
         class="border border-3 rounded my-5 p-5 bg-white">
         @method('PATCH')
