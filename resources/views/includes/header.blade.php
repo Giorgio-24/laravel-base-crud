@@ -13,7 +13,8 @@
             <h1 class="col-3">Dc Comics</h1>
             <nav class="col-6 offset-1">
                 <a href="/" class="text-decoration-none text-white me-3">Home</a>
-                <a href="/comics/create" class="text-decoration-none text-white">Create Comic</a>
+                <a href="{{route('comics.create')}}" class="text-decoration-none text-white me-3">Create Comic</a>
+                <a href="{{route('comics.trash')}}" class="text-decoration-none text-white">Deleted Comics</a>
             </nav>
         </div>
     </header>
