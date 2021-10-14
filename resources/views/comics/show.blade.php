@@ -15,7 +15,7 @@
           <p class="card-text"><strong>Description:</strong> {{$comic->description}}</p>
           <p class="card-text"><strong>Price:</strong> {{$comic->price}}&euro;</p>
           
-          <a href="{{url()->previous()}}" class="btn btn-primary">Go back</a>
+          <a href="/" class="btn btn-primary">Go Home</a>
         </div>
       </div>
     </div>

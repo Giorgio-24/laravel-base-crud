@@ -13,7 +13,7 @@
             <form method="POST" action="{{route('comics.restore', $comic->id)}}">
                 @method('PATCH')
                 @csrf
-            <button class="btn rounded bg-success text-white" type="submit">Ripristina</button>
+            <button class="btn rounded bg-success text-white" type="submit">Restore</button>
             </form>
       </div> 
     </div>
