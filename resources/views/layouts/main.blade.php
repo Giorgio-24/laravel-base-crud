@@ -3,4 +3,6 @@
     @yield('content')
 </main>
 </body>
+
 </html>
+@yield('script')
