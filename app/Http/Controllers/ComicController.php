@@ -25,7 +25,9 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('comics.create');
+        $string = 'create';
+        $comic = new Comic;
+        return view('comics.create', compact('comic', 'string'));
     }
 
     /**
@@ -67,10 +69,10 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Comic $comic)
-    {
-        /*        $comic = Comic::findOrFail($id); */
+    {/* $comic = Comic::findOrFail($id); */
 
-        return view('comics.edit', compact('comic'));
+        $string = 'edit';
+        return view('comics.edit', compact('comic', 'string'));
     }
 
     /**
