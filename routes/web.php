@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+/* use Carbon\Carbon; */
 
 Route::get('/',  'ComicController@index');
 
