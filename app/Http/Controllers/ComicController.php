@@ -47,6 +47,15 @@ class ComicController extends Controller
             'series' => ['string', 'min:4'],
             'sale_date' => ['date', 'before:tomorrow', 'size:10'],
             'type' => ['string', 'min:4', 'max:100']
+        ], [
+            'required' => 'You must insert a value!',
+            'string' => 'You must insert a string!',
+            'numeric' => 'You must insert a number!',
+            'date' => 'You must insert a valid date! (es: 2021-10-14)',
+            'sale_date.before' => 'You must insert a not future date!',
+            'sale_date.size' => 'You must insert a 10 carachters date! (es: 2021-10-14)',
+            'min' => 'The value is too short!',
+            'max' => 'The value is too long!'
         ]);
 
         $data = $request->all();
