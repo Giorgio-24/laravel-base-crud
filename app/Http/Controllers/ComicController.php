@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comic;
+use Illuminate\Validation\Rule;
 
 class ComicController extends Controller
 {
@@ -40,15 +41,16 @@ class ComicController extends Controller
     {
 
         $request->validate([
-            'title' => ['required',  'string', 'min:4', 'max:200'],
-            'description' => ['string', 'min:4'],
-            'thumb' => ['string'],
+            'title' => ['required', 'unique', 'string', 'min:4', 'max:200'],
+            'description' => ['required', 'string', 'min:4'],
+            'thumb' => ['required', 'string'],
             'price' => ['required', 'numeric', 'min:0', 'max:99999.99'],
-            'series' => ['string', 'min:4'],
-            'sale_date' => ['date', 'before:tomorrow', 'size:10'],
-            'type' => ['string', 'min:4', 'max:100']
+            'series' => ['required', 'string', 'min:4'],
+            'sale_date' => ['required', 'date', 'before:tomorrow', 'size:10'],
+            'type' => ['required', 'string', 'min:4', 'max:100']
         ], [
-            'required' => 'You must insert a value!',
+            'required' => 'You must fill the :attribute field!', //^:attribute riesce a leggere il nome dell' attributo
+            'unique' => 'The :attribute field must be unique!',
             'string' => 'You must insert a string!',
             'numeric' => 'You must insert a number!',
             'date' => 'You must insert a valid date! (es: 2021-10-14)',
@@ -99,6 +101,28 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+
+        $request->validate([
+            'title' => ['required', Rule::unique('comics')->ignore($comic->id), 'string', 'min:4', 'max:200'],
+            'description' => ['required', 'string', 'min:4'],
+            'thumb' => ['required', 'string'],
+            'price' => ['required', 'numeric', 'min:0', 'max:99999.99'],
+            'series' => ['required', 'string', 'min:4'],
+            'sale_date' => ['required', 'date', 'before:tomorrow', 'size:10'],
+            'type' => ['required', 'string', 'min:4', 'max:100']
+        ], [
+            'required' => 'You must fill the :attribute field!', //^:attribute riesce a leggere il nome dell' attributo
+            'unique' => 'The :attribute field must be unique!',
+            'string' => 'You must insert a string!',
+            'numeric' => 'You must insert a number!',
+            'min' => 'The value is too short!',
+            'max' => 'The value is too long!',
+            'date' => 'You must insert a valid date! (es: 2021-10-14)',
+            'sale_date.before' => 'You must insert a not future date!',
+            'sale_date.size' => 'You must insert a 10 carachters date! (es: 2021-10-14)',
+            'title.unique' => "The comic $request->title already exists!"
+        ]);
+
         $data = $request->all();
 
         $comic->update($data);
