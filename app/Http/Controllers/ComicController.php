@@ -41,7 +41,7 @@ class ComicController extends Controller
     {
 
         $request->validate([
-            'title' => ['required', 'unique', 'string', 'min:4', 'max:200'],
+            'title' => ['required', 'unique:comics', 'string', 'min:4', 'max:200'],
             'description' => ['required', 'string', 'min:4'],
             'thumb' => ['required', 'string'],
             'price' => ['required', 'numeric', 'min:0', 'max:99999.99'],
